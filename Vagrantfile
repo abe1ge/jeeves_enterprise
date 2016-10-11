@@ -7,222 +7,222 @@
    # Setting up the Shared folder
   config.vm.synced_folder "shared", "/tmp/shared" 
   
-	config.vm.define "master" do |master|
+	config.vm.define "masterEnt" do |masterEnt|
   
  		# Configuring Hostname
-		master.vm.hostname= "JeevesMaster.qac.local"
+		masterEnt.vm.hostname= "JeevesmasterEnt.qac.local"
   
 		# Selecting the box to use
-		master.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		masterEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		master.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.73"
+		masterEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.124"
 		
 		# Calling the provision bash file
-		master.vm.provision:shell,path:"bootstrap_master.sh"
+		masterEnt.vm.provision:shell,path:"bootstrap_masterEnt.sh"
 		
 		# Configuring vm provider options
-		master.vm.provider "virtualbox" do |masterVM|
+		masterEnt.vm.provider "virtualbox" do |masterEntVM|
   
 			# Showing the vm GUI and setting its name
-			masterVM.gui = true
-			masterVM.name="JeevesMasterVM"
+			masterEntVM.gui = true
+			masterEntVM.name="JeevesmasterEntVM"
    
 			# Setting the amount of RAM the VM has access to
-			masterVM.memory = "4096"
-			masterVM.cpus = "2"
+			masterEntVM.memory = "4096"
+			masterEntVM.cpus = "2"
 		end
 	end
     
 	
 	
-	config.vm.define "agent1" do |agent|
+	config.vm.define "agentEnt1" do |agentEnt|
 	
 	 	# Configuring Hostname
-		agent.vm.hostname= "JeevesAgent1.qac.local"
+		agentEnt.vm.hostname= "JeevesagentEnt1.qac.local"
   
 		# Selecting the box to use
-		agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.26"
+		agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.125"
 		
 		# Calling the provision bash file
-		agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		# Configuring vm provider options
-		agent.vm.provider "virtualbox" do |agentVM|
+		agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			# Showing the vm GUI and setting its name
-			agentVM.gui = true
-			agentVM.name="JeevesAgent1"
+			agentEntVM.gui = true
+			agentEntVM.name="JeevesagentEnt1"
    
 			# Setting the amount of RAM the VM has access to
-			agentVM.memory = "4096"
-			agentVM.cpus = "2"
+			agentEntVM.memory = "4096"
+			agentEntVM.cpus = "2"
 		end
 	end
 	
-		config.vm.define "agent2" do |agent|
+		config.vm.define "agentEnt2" do |agentEnt|
 	
 	 	# Configuring Hostname
-		agent.vm.hostname= "JeevesAgent2.qac.local"
+		agentEnt.vm.hostname= "JeevesagentEnt2.qac.local"
   
 		# Selecting the box to use
-		agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.27"
+		agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.126"
 		
 		# Calling the provision bash file
-		agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		# Configuring vm provider options
-		agent.vm.provider "virtualbox" do |agentVM|
+		agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			# Showing the vm GUI and setting its name
-			agentVM.gui = true
-			agentVM.name="JeevesAgent2"
+			agentEntVM.gui = true
+			agentEntVM.name="JeevesagentEnt2"
    
 			# Setting the amount of RAM the VM has access to
-			agentVM.memory = "4096"
-			agentVM.cpus = "2"
+			agentEntVM.memory = "4096"
+			agentEntVM.cpus = "2"
 		end
 	end
 	
-		config.vm.define "agent3" do |agent|
+		config.vm.define "agentEnt3" do |agentEnt|
 	
 	 	# Configuring Hostname
-		agent.vm.hostname= "JeevesAgent3.qac.local"
+		agentEnt.vm.hostname= "JeevesagentEnt3.qac.local"
   
 		# Selecting the box to use
-		agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.28"
+		agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.127"
 		
 		# Calling the provision bash file
-		agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		# Configuring vm provider options
-		agent.vm.provider "virtualbox" do |agentVM|
+		agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			# Showing the vm GUI and setting its name
-			agentVM.gui = true
-			agentVM.name="JeevesAgent3"
+			agentEntVM.gui = true
+			agentEntVM.name="JeevesagentEnt3"
    
 			# Setting the amount of RAM the VM has access to
-			agentVM.memory = "4096"
-			agentVM.cpus = "2"
+			agentEntVM.memory = "4096"
+			agentEntVM.cpus = "2"
 		end
 	end
 	
-		config.vm.define "agent4" do |agent|
+		config.vm.define "agentEnt4" do |agentEnt|
 	
 	 	# Configuring Hostname
-		agent.vm.hostname= "JeevesAgent4.qac.local"
+		agentEnt.vm.hostname= "JeevesagentEnt4.qac.local"
   
 		# Selecting the box to use
-		agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.72"
+		agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.128"
 		
 		# Calling the provision bash file
-		agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		# Configuring vm provider options
-		agent.vm.provider "virtualbox" do |agentVM|
+		agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			# Showing the vm GUI and setting its name
-			agentVM.gui = true
-			agentVM.name="JeevesAgent4"
+			agentEntVM.gui = true
+			agentEntVM.name="JeevesagentEnt4"
    
 			# Setting the amount of RAM the VM has access to
-			agentVM.memory = "4096"
-			agentVM.cpus = "2"
+			agentEntVM.memory = "4096"
+			agentEntVM.cpus = "2"
 		end
 	end
 
-		 config.vm.define "agent5" do |agent|
+		 config.vm.define "agentEnt5" do |agentEnt|
 	
 	 	 # Configuring Hostname
-		 agent.vm.hostname= "JeevesAgent5.qac.local"
+		 agentEnt.vm.hostname= "JeevesagentEnt5.qac.local"
   
 		 # Selecting the box to use
-		 agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		 agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		 # Setting up the network options
-		 agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.75"
+		 agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.129"
 		
 		 # Calling the provision bash file
-		 agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		 agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		 # Configuring vm provider options
-		 agent.vm.provider "virtualbox" do |agentVM|
+		 agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			 # Showing the vm GUI and setting its name
-			 agentVM.gui = true
-			 agentVM.name="JeevesAgent5"
+			 agentEntVM.gui = true
+			 agentEntVM.name="JeevesagentEnt5"
    
 			 # Setting the amount of RAM the VM has access to
-			 agentVM.memory = "4096"
-			 agentVM.cpus = "2"
+			 agentEntVM.memory = "4096"
+			 agentEntVM.cpus = "2"
 		 end
 	 end
 	
 	
-	# config.vm.define "mastertest" do |master|
+	# config.vm.define "masterEnttest" do |masterEnt|
   
  		# # Configuring Hostname
-		# master.vm.hostname= "JeevesMasterTest.qac.local"
+		# masterEnt.vm.hostname= "JeevesmasterEntTest.qac.local"
   
 		# # Selecting the box to use
-		# master.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		# masterEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# # Setting up the network options
-		# master.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.74"
+		# masterEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.130"
 		
 		# # Calling the provision bash file
-		# master.vm.provision:shell,path:"bootstrap_master.sh"
+		# masterEnt.vm.provision:shell,path:"bootstrap_masterEnt.sh"
 		
 		# # Configuring vm provider options
-		# master.vm.provider "virtualbox" do |masterVM|
+		# masterEnt.vm.provider "virtualbox" do |masterEntVM|
   
 			# # Showing the vm GUI and setting its name
-			# masterVM.gui = true
-			# masterVM.name="JeevesMasterTestVM"
+			# masterEntVM.gui = true
+			# masterEntVM.name="JeevesmasterEntTestVM"
    
 			# # Setting the amount of RAM the VM has access to
-			# masterVM.memory = "4096"
-			# masterVM.cpus = "2"
+			# masterEntVM.memory = "4096"
+			# masterEntVM.cpus = "2"
 		# end
 	# end
 	 
-	 	# config.vm.define "agenttest" do |agent|
+	 	# config.vm.define "agentEnttest" do |agentEnt|
 	
 	 	# # Configuring Hostname
-		# agent.vm.hostname= "JeevesAgentTest.qac.local"
+		# agentEnt.vm.hostname= "JeevesagentEntTest.qac.local"
   
 		# # Selecting the box to use
-		# agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+		# agentEnt.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# # Setting up the network options
-		# agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.75"
+		# agentEnt.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.131"
 		
 		# # Calling the provision bash file
-		# agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		# agentEnt.vm.provision:shell,path:"bootstrap_agentEnt.sh"
 		
 		# # Configuring vm provider options
-		# agent.vm.provider "virtualbox" do |agentVM|
+		# agentEnt.vm.provider "virtualbox" do |agentEntVM|
   
 			# # Showing the vm GUI and setting its name
-			# agentVM.gui = true
-			# agentVM.name="JeevesAgentTest"
+			# agentEntVM.gui = true
+			# agentEntVM.name="JeevesagentEntTest"
    
 			# # Setting the amount of RAM the VM has access to
-			# agentVM.memory = "4096"
-			# agentVM.cpus = "2"
+			# agentEntVM.memory = "4096"
+			# agentEntVM.cpus = "2"
 		# end
 	# end
 end
