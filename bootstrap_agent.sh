@@ -70,3 +70,13 @@ echo "Puppet agent enabled"
 sudo puppet agent --test --server="$mfqdn"
 
 echo "Puppet agent has linked to master server and applied the puppet modules"
+
+sudo mkdir /media/zabbix
+
+sudo mount -o loop /tmp/shared/zabbix_appliance_3.2.0_x86_64.iso /media/zabbix
+
+echo "Zabbix mounted"
+
+echo "About to reboot"
+
+reboot
