@@ -144,6 +144,34 @@
 		end
 	end
 
+		 config.vm.define "agent5" do |agent|
+	
+	 	 # Configuring Hostname
+		 agent.vm.hostname= "JeevesAgent5.qac.local"
+  
+		 # Selecting the box to use
+		 agent.vm.box = "chad-thompson/ubuntu-trusty64-gui"
+	
+		 # Setting up the network options
+		 agent.vm.network :public_network, :public_network=> "wlan0",ip:"192.168.1.75"
+		
+		 # Calling the provision bash file
+		 agent.vm.provision:shell,path:"bootstrap_agent.sh"
+		
+		 # Configuring vm provider options
+		 agent.vm.provider "virtualbox" do |agentVM|
+  
+			 # Showing the vm GUI and setting its name
+			 agentVM.gui = true
+			 agentVM.name="JeevesAgent5"
+   
+			 # Setting the amount of RAM the VM has access to
+			 agentVM.memory = "4096"
+			 agentVM.cpus = "2"
+		 end
+	 end
+	
+	
 	# config.vm.define "mastertest" do |master|
   
  		# # Configuring Hostname
@@ -170,8 +198,8 @@
 			# masterVM.cpus = "2"
 		# end
 	# end
-	
-	# config.vm.define "agenttest" do |agent|
+	 
+	 	# config.vm.define "agenttest" do |agent|
 	
 	 	# # Configuring Hostname
 		# agent.vm.hostname= "JeevesAgentTest.qac.local"
