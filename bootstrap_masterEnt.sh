@@ -33,11 +33,11 @@ sudo /opt/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64/puppet-enterprise-instal
 
 echo "Puppet installed"
 
-#fqdn=`facter fqdn`
-#ip=`facter ipaddress_eth1`
+fqdn=`facter fqdn`
+ip=`facter ipaddress_eth1`
 
-#sed -i "1i127.0.0.1	$fqdn	puppetmaster" /etc/hosts
-#sed -i "2i$ip	$fqdn	puppetmaster" /etc/hosts
+sed -i "1i127.0.0.1	$fqdn	puppetmaster" /etc/hosts
+sed -i "2i$ip	$fqdn	puppetmaster" /etc/hosts
 
 #echo "Hosts file updated"
 
