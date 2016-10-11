@@ -16,7 +16,7 @@ echo "Firewall disabled"
 #Set time-zone and keyboard
 
 sudo timedatectl set-timezone Europe/London
-setxkbmap -layout gb
+setxkbmap gb
 
 echo "Time Zone and Keyboard set to UK standard"
 
@@ -47,7 +47,7 @@ sudo cp -r /tmp/shared/jenkins_plugin /usr/share/puppet/modules
 
 echo "Modules Copied"
 
-sudo echo "node 'jeevesagenttest.qac.local' {" >> /etc/puppet/manifests/site.pp
+sudo echo "node 'jeevesagent1.qac.local','jeevesagent2.qac.local','jeevesagent3.qac.local','jeevesagent4.qac.local' {" >> /etc/puppet/manifests/site.pp
 sudo echo "include javainstall" >> /etc/puppet/manifests/site.pp
 sudo echo "include maven" >> /etc/puppet/manifests/site.pp
 sudo echo "include nexus" >> /etc/puppet/manifests/site.pp
