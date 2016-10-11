@@ -62,6 +62,7 @@ sudo service puppet start
 #echo "Puppet service restarted"
 
 #sleep 3
+sudo apt-get install curl -y
 
 curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
