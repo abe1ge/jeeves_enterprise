@@ -11,8 +11,8 @@ sudo apt-get install sshpass
 
 echo "Open ssh installed"
 
-sudo apt-get install -y libaio1
-sudo apt-get install -y libmecab2
+#sudo apt-get install -y libaio1
+#sudo apt-get install -y libmecab2
 
 echo "MySQL Dependencies installed"
 
@@ -32,34 +32,44 @@ sudo apt-get install -y puppet
 
 echo "Puppet installed"
 
-#mfqdn="jeevesmaster.qac.local"
-#mip="192.168.1.73"
+mfqdn="jeevesmasterent.qac.local"
+mip="192.168.1.124"
 
-#fqdn=`facter fqdn`
-#ip=`facter ipaddress`
+fqdn=`facter fqdn`
+ip=`facter ipaddress`
 
-#sed -i "1i$mip	$mfqdn	puppetmaster" /etc/hosts
-#sed -i "2i127.0.0.1	$fqdn	puppet" /etc/hosts
-#sed -i "3i$ip	$fqdn	puppet" /etc/hosts
+sed -i "1i$mip	$mfqdn	puppetmaster" /etc/hosts
+sed -i "2i127.0.0.1	$fqdn	puppet" /etc/hosts
+sed -i "3i$ip	$fqdn	puppet" /etc/hosts
 
-#sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
+sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
 
-#echo "Hosts file updated"
+echo "Hosts file updated"
 
-#sudo puppet agent --test --server="$mfqdn"
+sudo puppet agent --test --server="$mfqdn"
 
-#sshpass -p "vagrant" ssh -o StrictHostKeyChecking=no vagrant@"$mip" << EOF
-#sudo puppet cert list
-#sudo puppet cert sign --all
-#exit 0
-#EOF
+sshpass -p "vagrant" ssh -o StrictHostKeyChecking=no vagrant@"$mip" << EOF
+sudo puppet cert list
+sudo puppet cert sign --all
+exit 0
+EOF
 
-#echo " Puppet certificate signed"
+echo " Puppet certificate signed"
 
-#sudo service puppet stop
-#sudo service puppet start
+sudo service puppet stop
+sudo service puppet start
 
-#echo "Puppet service restarted"
+curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+
+wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+
+sudo dpkg -i puppetlabs-release-trusty.deb
+
+sudo apt-get update
+
+curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+
+echo "Puppet service restarted"
 
 #sleep 3
 
