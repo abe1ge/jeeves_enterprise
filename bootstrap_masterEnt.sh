@@ -21,7 +21,15 @@ setxkbmap gb
 echo "Time Zone and Keyboard set to UK standard"
 
 #Install Puppet
-#sudo apt-get -y install puppet puppetmaster
+sudo cp /tmp/shared/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64.tar.gz /opt
+cd /opt
+sudo tar -zxvf /opt/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64.tar.gz
+sudo cp /tmp/shared/answers.install /opt/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64/answers
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+sudo dpkg -i puppetlabs-release-trusty.deb
+sudo apt-get update
+
+sudo /opt/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64/puppet-enterprise-installer -A /opt/puppet-enterprise-2015.2.0-ubuntu-14.04-amd64/answers/answers.install
 
 echo "Puppet installed"
 
