@@ -52,6 +52,7 @@ sudo cp -r /tmp/shared/maven /etc/puppetlabs/code/environments/production/module
 sudo cp -r /tmp/shared/mysqlinstall /etc/puppetlabs/code/environments/production/modules
 sudo cp -r /tmp/shared/nexus /etc/puppetlabs/code/environments/production/modules
 sudo cp -r /tmp/shared/jenkins_plugin /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/zabbix /etc/puppetlabs/code/environments/production/modules
 
 echo "Modules Copied"
 
@@ -64,6 +65,7 @@ sudo echo "include bamboo" >> /etc/puppetlabs/code/environments/production/manif
 sudo echo "include jira" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "include mysqlinstall" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "include jenkins" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include zabbix" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 #sudo echo "include jenkins_plugin" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "}" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
