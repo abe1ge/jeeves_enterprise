@@ -48,11 +48,11 @@ sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
 
 sudo puppet agent --test --server="$mfqdn"
 
-#sshpass -p "vagrant" ssh -o StrictHostKeyChecking=no vagrant@"$mip" << EOF
-#sudo puppet cert list
-#sudo puppet cert sign --all
-#exit 0
-#EOF
+sshpass -p "vagrant" ssh -o StrictHostKeyChecking=no vagrant@"$mip" << EOF
+sudo puppet cert list
+sudo puppet cert sign --all
+exit 0
+EOF
 
 #echo " Puppet certificate signed"
 
@@ -62,22 +62,22 @@ sudo service puppet start
 #echo "Puppet service restarted"
 
 #sleep 3
-sudo apt-get install curl -y
+#sudo apt-get install curl -y
 
-curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+#curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
-sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+#sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 
-sudo dpkg -i puppet-release-trusty.deb
+#sudo dpkg -i puppet-release-trusty.deb
 
-sudo apt-get update
+#sudo apt-get update
 
-curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+#curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
-#sudo puppet agent --enable
+sudo puppet agent --enable
 
-#echo "Puppet agent enabled"
+echo "Puppet agent enabled"
 
-#sudo puppet agent --test --server="$mfqdn"
+sudo puppet agent --test --server="$mfqdn"
 
-#echo "Puppet agent has linked to master server and applied the puppet modules"
+echo "Puppet agent has linked to master server and applied the puppet modules"
