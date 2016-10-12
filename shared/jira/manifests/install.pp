@@ -27,5 +27,6 @@ class jira::install {
 		command => 'sudo bash /opt/jira_setup.sh',
 		refreshonly => 'true',
 		require => Exec['make_executable'],
+		timeout => '600',
 	}	
 }
