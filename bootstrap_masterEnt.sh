@@ -41,33 +41,32 @@ sed -i "2i$ip	$fqdn	puppetmaster" /etc/hosts
 
 #echo "Hosts file updated"
 
-#sudo touch /etc/puppet/manifests/site.pp
+sudo touch /etc/puppetlabs/code/environments/production/manifests/site.pp
 
-#sudo cp -r /tmp/shared/bamboo /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/git /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/javainstall /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/jenkins /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/jira /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/maven /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/mysqlinstall /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/nexus /usr/share/puppet/modules
-#sudo cp -r /tmp/shared/jenkins_plugin /usr/share/puppet/modules
+sudo cp -r /tmp/shared/bamboo /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/git /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/javainstall /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/jenkins /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/jira /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/maven /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/mysqlinstall /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/nexus /etc/puppetlabs/code/environments/production/modules
+sudo cp -r /tmp/shared/jenkins_plugin /etc/puppetlabs/code/environments/production/modules
 
-#echo "Modules Copied"
+echo "Modules Copied"
 
-#sudo echo "node 'jeevesagent1.qac.local','jeevesagent2.qac.local','jeevesagent3.qac.local','jeevesagent4.qac.local' {" >> /etc/puppet/manifests/site.pp
-#sudo echo "include javainstall" >> /etc/puppet/manifests/site.pp
-#sudo echo "include maven" >> /etc/puppet/manifests/site.pp
-#sudo echo "include nexus" >> /etc/puppet/manifests/site.pp
-#sudo echo "include git" >> /etc/puppet/manifests/site.pp
-#sudo echo "include bamboo" >> /etc/puppet/manifests/site.pp
-#sudo echo "include jira" >> /etc/puppet/manifests/site.pp
-#sudo echo "include mysqlinstall" >> /etc/puppet/manifests/site.pp
-#sudo echo "include jenkins" >> /etc/puppet/manifests/site.pp
-#sudo echo "include jenkins_plugin" >> /etc/puppet/manifests/site.pp
-#sudo echo "}" >> /etc/puppet/manifests/site.pp
-#sudo echo "" >> /etc/puppet/manifests/site.pp
-#sudo echo "node 'default' {" >> /etc/puppet/manifests/site.pp
-#sudo echo "}" >> /etc/puppet/manifests/site.pp
+sudo echo "node 'jeevesagentent1.qac.local','jeevesagentent2.qac.local','jeevesagentent3.qac.local','jeevesagentent4.qac.local' {" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include javainstall" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include maven" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include nexus" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include git" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include bamboo" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include jira" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include mysqlinstall" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include jenkins" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "include jenkins_plugin" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "}" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 
-#echo "Site.pp updated"
+
+echo "Site.pp updated"
