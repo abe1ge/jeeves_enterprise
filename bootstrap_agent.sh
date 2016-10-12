@@ -33,7 +33,7 @@ sudo apt-get install -y puppet
 echo "Puppet installed"
 
 mfqdn="jeevesmaster.qac.local"
-mip="192.168.1.73"
+mip="192.168.1.80"
 
 fqdn=`facter fqdn`
 ip=`facter ipaddress`
@@ -70,13 +70,3 @@ echo "Puppet agent enabled"
 sudo puppet agent --test --server="$mfqdn"
 
 echo "Puppet agent has linked to master server and applied the puppet modules"
-
-sudo mkdir /media/zabbix
-
-sudo mount -o loop /tmp/shared/zabbix_appliance_3.2.0_x86_64.iso /media/zabbix
-
-echo "Zabbix mounted"
-
-echo "About to reboot"
-
-reboot
