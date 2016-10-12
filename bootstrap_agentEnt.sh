@@ -44,7 +44,7 @@ sed -i "3i$ip	$fqdn	puppet" /etc/hosts
 
 sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
 
-#echo "Hosts file updated"
+echo "Hosts file updated"
 
 sudo puppet agent --test --server="$mfqdn"
 
@@ -54,17 +54,16 @@ sudo puppet cert sign --all
 exit 0
 EOF
 
-#echo " Puppet certificate signed"
+echo " Puppet certificate signed"
 
 sudo service puppet stop
 sudo service puppet start
 
-#echo "Puppet service restarted"
+echo "Puppet service restarted"
 
-#sleep 3
+
+sleep 3
 #sudo apt-get install curl -y
-
-#curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
 #sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 
@@ -77,6 +76,7 @@ sudo service puppet start
 sudo puppet agent --enable
 
 echo "Puppet agent enabled"
+
 
 sudo puppet agent --test --server="$mfqdn"
 
