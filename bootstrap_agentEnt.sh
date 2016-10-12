@@ -65,11 +65,11 @@ echo "Puppet service restarted"
 sleep 3
 #sudo apt-get install curl -y
 
-#sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
 
-#sudo dpkg -i puppet-release-trusty.deb
+sudo dpkg -i puppet-release-trusty.deb
 
-#sudo apt-get update
+sudo apt-get update
 
 #curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
