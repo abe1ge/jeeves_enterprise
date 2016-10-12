@@ -55,7 +55,7 @@ sudo cp -r /tmp/shared/jenkins_plugin /etc/puppetlabs/code/environments/producti
 
 echo "Modules Copied"
 
-sudo echo "node 'jeevesagentent1.qac.local' {" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+sudo echo "node 'jeevesagentent1.qac.local','jeevesagentent2.qac.local','jeevesagentent3.qac.local','jeevesagentent4.qac.local' {" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "include javainstall" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "include maven" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "include nexus" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
@@ -67,7 +67,6 @@ sudo echo "include jenkins" >> /etc/puppetlabs/code/environments/production/mani
 sudo echo "include jenkins_plugin" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "}" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 sudo echo "" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
-sudo echo "node 'default' {" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
-sudo echo "}" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
+
 
 echo "Site.pp updated"
