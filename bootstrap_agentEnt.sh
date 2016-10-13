@@ -11,8 +11,8 @@ sudo apt-get install sshpass
 
 echo "Open ssh installed"
 
-#sudo apt-get install -y libaio1
-#sudo apt-get install -y libmecab2
+sudo apt-get install -y libaio1
+sudo apt-get install -y libmecab2
 
 echo "MySQL Dependencies installed"
 
@@ -46,7 +46,22 @@ sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
 
 echo "Hosts file updated"
 
-sudo puppet agent --test --server="$mfqdn"
+duration1=$SECONDS
+echo "$(($duration1 / 60)) minute(s) and $(($duration1 % 60)) second(s) elapsed."
+
+#sudo puppet agent --test --server="$mfqdn"
+
+sudo apt-get install curl -y
+
+sudo wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
+
+sudo dpkg -i puppetlabs-release-trusty.deb
+
+sudo apt-get update
+
+curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+
+sudo puppet agent --enable
 
 sshpass -p "vagrant" ssh -o StrictHostKeyChecking=no vagrant@"$mip" << EOF
 sudo puppet cert list
@@ -56,27 +71,20 @@ EOF
 
 echo " Puppet certificate signed"
 
-sudo service puppet stop
-sudo service puppet start
-
-curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
-
-wget https://apt.puppetlabs.com/puppetlabs-release-trusty.deb
-
-sudo dpkg -i puppetlabs-release-trusty.deb
-
-sudo apt-get update
-
-curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
+#sudo service puppet stop
+#sudo service puppet start
 
 echo "Puppet service restarted"
 
-#sleep 3
+
 
 #sudo puppet agent --enable
 
-#echo "Puppet agent enabled"
+echo "Puppet agent enabled"
 
-#sudo puppet agent --test --server="$mfqdn"
+sudo puppet agent --test --server="$mfqdn"
 
-#echo "Puppet agent has linked to master server and applied the puppet modules"
+echo "Puppet agent has linked to master server and applied the puppet modules"
+
+duration2=$SECONDS
+echo "$(($duration2 / 60)) minute(s) and $(($duration2 % 60)) second(s) elapsed."
