@@ -32,8 +32,8 @@ sudo apt-get install -y puppet
 
 echo "Puppet installed"
 
-mfqdn="JeevesmasterEnt.qac.local"
-mip="192.168.1.124"
+. /tmp/shared/mfqdn.file
+. /tmp/shared/mip.file
 
 fqdn=`facter fqdn`
 ip=`facter ipaddress`
@@ -45,6 +45,9 @@ sed -i "3i$ip	$fqdn	puppet" /etc/hosts
 sed -i "2iserver=$mfqdn" /etc/puppet/puppet.conf
 
 echo "Hosts file updated"
+
+duration1=$SECONDS
+echo "$(($duration1 / 60)) minute(s) and $(($duration1 % 60)) second(s) elapsed."
 
 sudo puppet agent --test --server="$mfqdn"
 
@@ -80,3 +83,6 @@ echo "Puppet agent enabled"
 sudo puppet agent --test --server="$mfqdn"
 
 echo "Puppet agent has linked to master server and applied the puppet modules"
+
+duration2=$SECONDS
+echo "$(($duration2 / 60)) minute(s) and $(($duration2 % 60)) second(s) elapsed."
