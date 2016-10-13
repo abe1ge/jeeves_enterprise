@@ -23,13 +23,14 @@ class jira {
 		command => 'sudo chmod a+x /opt/jira.bin',
 		refreshonly => 'true',
 		require => File['/opt/jira.bin'],
+		notify => Exec['unzip_jira'],
 	}
 
 	exec { 'unzip_jira':
 		unless => 'grep -rnw "/opt/atlassian/jira" -e "install"',
 		path => ['/bin','/usr/bin'],
 		cwd => '/opt',
-		command => 'sudo jira.bin -q response.varfile',
+		command => 'sudo ./jira.bin -q -varfile response.varfile',
 		refreshonly => 'true',
 		require => Exec['make_executable'],
 		timeout => '600',
