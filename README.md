@@ -27,7 +27,7 @@ Testing the modules:
 	In the terminal, type "java -version"
 	
 	Maven:
-	In the terminal, type "mvn -version"
+	In the terminal, type "mvn --version"
 	
 	Git:
 	In the terminal, type "git --version"
