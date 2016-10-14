@@ -48,7 +48,7 @@ if [ -e /tmp/shared/mip.file ]
 then
 	. /tmp/shared/mip.file
 else
-	mip="192.168.1.124"
+	mip="192.168.1.96"
 fi
 
 
