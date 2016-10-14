@@ -1,24 +1,24 @@
-metadata	:name 		=> "Echo Agent",
-		:description 	=> "Simple Echo Agent (written by HW)",
+metadata	:name 		=> "Command Agent",
+		:description 	=> "Run any shell command",
 		:author		=> "Henri",
-		:license	=> "GPLv2",
-		:version	=> "1.1",
+		:license		=> "GPLv2",
+		:version		=> "1.1",
 		:url		=> "https://docs.puppetlabs.com/mcollective",
-		:timeout	=> 60
+		:timeout		=> 60
 
-action 'command',	:description => 'Echo any message' do
+action 'command',	:description => 'Run any shell command' do
 	display	:always
 
 	input	:cmd,
-			:prompt		=> "Message",
-			:description	=> "Your message",
+			:prompt		=> "Command",
+			:description	=> "Your command",
 			:type		=> :string,
 			:validation	=> '.*',
 			:optional	=> false,
 			:maxlength	=> 1024
 	
 	output	:cmd,
-			:description	=> 'Your message',
-			:display_as	=> 'Message',
+			:description	=> 'Command',
+			:display_as	=> 'Your command',
 			:default	=> ''
 end
