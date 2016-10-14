@@ -1,7 +1,14 @@
 # jeeves
-Step 1: Ensure the installation files are in the top of the "shared" folder. They do not need to be in a specific folder.
+Step 1: Copy all items found in "Jeeves Install Files" into the "shared" folder
 
-Step 2: vagrant up
+Step 2: In git bash, use "vagrant up masterEnt agent1"
+
+Step 3: Once the master VM has Puppet Enterprise installed (i.e. once agent1 has started to boot up):
+	
+	On the Master VM, open Firefox and enter "https://localhost" into the url bar
+	Under "I Understand the Risks", allow an exception and confirm it
+	Sign into Puppet Enterprise with username "admin" and password "vagrant1"
+	Once the agent is booted up, it should be visible in the Puppet Enterprise console.
 
 Testing the modules:
 
