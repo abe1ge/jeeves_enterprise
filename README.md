@@ -1,7 +1,7 @@
 # jeeves
 Step 1: Copy all items found in "Jeeves Install Files" into the "shared" folder
 
-Step 2: Open up git bash in the jeeves_enterprise file, use "vagrant up masterEnt agent1"
+Step 2: Open up git bash in the jeeves_enterprise file and use the command "vagrant up masterEnt agent1"
 
 	You may be asked to choose a network interface. If this occours a list will be shown 
 	
