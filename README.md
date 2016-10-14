@@ -36,4 +36,19 @@ Testing the modules:
 	Open Firefox
 	In the url bar, enter "localhost:8081"
 	
+MCollective
+
+	To use MCollective log into peadmin using sudo -iu peadmin
+	Type:
+		mco ping
+	to see which machines are on the network.
+
+	Plugin files need to be placed in /opt/puppetlabs/mcollective/plugins/mcollective/agent/
+	We have written a plugin "command" which will run a shell command on all machines. (You will need to reboot the master before 		using this plugin)
+	To use this type:
+		mco rpc command command cmd="SHELL_COMMAND"
+
+	for instance, if we wanted to change the time zone to that of Paris, type:
+		mco rpc command command cmd="sudo timedatectl set-timezone Europe/Paris"
+	
 	

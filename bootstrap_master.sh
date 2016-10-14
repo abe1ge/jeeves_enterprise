@@ -101,6 +101,11 @@ sudo echo "" >> /etc/puppetlabs/code/environments/production/manifests/site.pp
 
 echo "Site.pp updated"
 
+#Place MCollective command plugin file
+
+sudo cp /tmp/shared/command.ddl /opt/puppetlabs/mcollective/plugins/mcollective/agent/
+sudo cp /tmp/shared/command.rb /opt/puppetlabs/mcollective/plugins/mcollective/agent/
+
 #Returning the time taken for the script to run
 duration=$SECONDS
 echo "$(($duration / 60)) minute(s) and $(($duration % 60)) second(s) elapsed."
