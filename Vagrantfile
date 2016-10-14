@@ -16,7 +16,7 @@
 		master.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 	
 		# Setting up the network options
-		master.vm.network "public_network", :public_network=> "wlan0",ip:"192.168.1.135"
+		master.vm.network "public_network", :public_network=> "wlan0",ip:"192.168.1.96"
 		#master.vm.network "public_network", bridge: "Intel(R) Ethernet Connection I217-LM"
 		
 		# Calling the provision bash file
@@ -27,7 +27,7 @@
   
 			# Showing the vm GUI and setting its name
 			masterVM.gui = true
-			masterVM.name="JeevesMasterVM"
+			masterVM.name="JeevesMasteerVM"
    
 			# Setting the amount of RAM the VM has access to
 			masterVM.memory = "4096"
