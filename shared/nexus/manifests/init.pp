@@ -5,7 +5,8 @@ class nexus {
 	
 	#include nexus::install
 	#include nexus::config
-
+	
+	
 	$runnew = 'run_as_user="vagrant"'
 	$runold = 'run_as_user=""'
 	

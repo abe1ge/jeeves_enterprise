@@ -1,11 +1,16 @@
 class jenkins {
 
-	#require javainstall
-	#require maven
-	#require bamboo
-	#require nexus
-	#require git
-	require mysqlinstall
+	 require javainstall
+	 require maven
+	 require bamboo
+	 require nexus
+	 require git
+	 require jira
+	 require mysqlinstall
+	 require nexus
+	 require zabbix
+	
+	#before javainstall
 	
 	file {'/opt/jenkins_2.1_all.deb':
 		ensure => 'present',
@@ -65,11 +70,11 @@ class jenkins {
 		cwd => '/opt/',
 		refreshonly => 'true',
 		require => Exec['jenksshkey'],
-		#notify => Exec['defaultjava'],
+		notify => Exec['defaultjava'],
 	}
 
 	exec { 'defaultjava':
-		command => 'echo "1" | sudo update-alternatives --config java',
+		command => 'echo "1" | sudo update-alternatives --config java || :',
 		path => ['/bin/','/usr/bin/','/sbin/','/usr/sbin/'],
 		require => Exec['jenkservstart'],
 		refreshonly => 'true',
