@@ -1,13 +1,13 @@
 class zabbix { 
 	
 	require javainstall
-	#require maven
+	require maven
 	
-	group {'zabbix':
+	group { 'zabbix':
 	ensure => 'present',
 	}
 	
-	user {'zabbix':
+	user { 'zabbix':
 	ensure => 'present',
 	home => '/home/zabbix',
 	groups => 'zabbix',
@@ -19,7 +19,7 @@ class zabbix {
 	require => User['zabbix'],
 	}
 		
-	file {'/opt/zabbix_3.2.0/zabbix_agents_3.2.0.linux2_6_23.amd64.tar.gz':
+	file { '/opt/zabbix_3.2.0/zabbix_agents_3.2.0.linux2_6_23.amd64.tar.gz':
 		ensure => 'present',
 		source => '/tmp/shared/zabbix_agents_3.2.0.linux2_6_23.amd64.tar.gz',
 		require => File['/opt/zabbix_3.2.0'],
@@ -39,26 +39,25 @@ class zabbix {
 		require => Exec['unzipzabbix'],
 	}
 	
-	file {'/bin/zabbix_get':
+	file { '/bin/zabbix_get':
 		ensure => 'present',
 		source => '/opt/zabbix_3.2.0/bin/zabbix_get',
 		require => Exec['unzipzabbix'],
 	}
 	
-	file {'/bin/zabbix_sender':
+	file { '/bin/zabbix_sender':
 		ensure => 'present',
 		source => '/opt/zabbix_3.2.0/bin/zabbix_sender',
 		require => Exec['unzipzabbix'],
 	}
 	
-	file {'/usr/local/etc/zabbix_agentd.conf':
+	file { '/usr/local/etc/zabbix_agentd.conf':
 		ensure => 'present',
 		source => '/opt/zabbix_3.2.0/conf/zabbix_agentd.conf',
 		require => Exec['unzipzabbix'],
 	}
 	
-	
-	exec {'chmodzab':
+	exec { 'chmodzab':
 		command => 'chmod a+x zabbix_agentd',
 		path => ['/bin/','/usr/bin/','/sbin/','/user/bin/'],
 		cwd => '/sbin',
@@ -72,4 +71,4 @@ class zabbix {
 		refreshonly => 'true',
 		subscribe => Exec['chmodzab'],
 	}
-}​
+}

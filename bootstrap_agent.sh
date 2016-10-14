@@ -41,14 +41,14 @@ if [ -e /tmp/shared/mfqdn.file ]
 then
 	. /tmp/shared/mfqdn.file
 else
-	mfqdn="jeevesmaster.qac.local"
+	mfqdn="jeevesmasterent.qac.local"
 fi
 
 if [ -e /tmp/shared/mip.file ]
 then
 	. /tmp/shared/mip.file
 else
-	mip="192.168.1.135"
+	mip="192.168.1.124"
 fi
 
 
@@ -83,7 +83,7 @@ sudo dpkg -i puppetlabs-release-trusty.deb
 
 sudo apt-get update
 
-curl -k https://jeevesmaster.qac.local:8140/packages/current/install.bash | sudo bash
+curl -k https://jeevesmasterent.qac.local:8140/packages/current/install.bash | sudo bash
 
 sudo puppet agent --enable
 
@@ -111,7 +111,7 @@ echo " Puppet certificate signed"
 #echo "Puppet agent enabled"
 
 #Contacting puppet master and provisioning the modules
-sudo puppet agent --test --server="$mfqdn"
+#sudo puppet agent --test --server="$mfqdn"
 
 echo "Puppet agent has linked to master server and applied the puppet modules"
 

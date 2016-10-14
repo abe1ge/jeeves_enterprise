@@ -10,7 +10,7 @@
 	config.vm.define "master" do |master|
   
  		# Configuring Hostname
-		master.vm.hostname= "JeevesMaster.qac.local"
+		master.vm.hostname= "JeevesMasterEnt.qac.local"
   
 		# Selecting the box to use
 		master.vm.box = "chad-thompson/ubuntu-trusty64-gui"
