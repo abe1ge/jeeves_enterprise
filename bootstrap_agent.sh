@@ -111,7 +111,7 @@ echo " Puppet certificate signed"
 #echo "Puppet agent enabled"
 
 #Contacting puppet master and provisioning the modules
-#sudo puppet agent --test --server="$mfqdn"
+sudo puppet agent --test --server="$mfqdn"
 
 echo "Puppet agent has linked to master server and applied the puppet modules"
 
