@@ -1,7 +1,14 @@
 # jeeves
 Step 1: Copy all items found in "Jeeves Install Files" into the "shared" folder
 
-Step 2: In git bash, use "vagrant up masterEnt agent1"
+Step 2: Open up git bash in the jeeves_enterprise file, use "vagrant up masterEnt agent1"
+
+	You may be asked to choose a network interface. If this occours a list will be shown 
+	
+	showing available network interfaces. Copy down the first in the list (including the '1)')
+	
+	and hit enter.
+
 
 Step 3: Once the master VM has Puppet Enterprise installed (i.e. once agent1 has started to boot up):
 	
