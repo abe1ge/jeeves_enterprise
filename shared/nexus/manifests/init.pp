@@ -1,3 +1,5 @@
+#AUTHORS: Timothy Perry, Abel Germa
+
 class nexus {
 	
 	#require javainstall
