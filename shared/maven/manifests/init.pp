@@ -1,3 +1,5 @@
+#AUTHOR: Henri Williams
+
 class maven {
 	
 	require javainstall
