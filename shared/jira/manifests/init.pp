@@ -1,3 +1,5 @@
+#AUTHOR: Timothy Perry
+
 class jira {
 
 	#require javainstall
