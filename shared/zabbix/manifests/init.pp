@@ -1,5 +1,3 @@
-#AUTHOR: Timothy Perry
-
 class zabbix { 
 	
 	require javainstall
